@@ -4,7 +4,8 @@ const port = 8080;
 const rotas = {
     '/': 'Curso de Node',
     '/livros': 'Entrei na pagina de livros',
-    '/autores': 'Listagem de autores'
+    '/autores': 'Listagem de autores',
+    '/sobre': 'info sobre o projeto'
 }
 
 const server = http.createServer((req, res) => {
