@@ -1,6 +1,6 @@
 import app from '/Users/viniciussalgueiro/Documents/studing_Node/Alura_Project/src/app.js'
 
-const port = process.env.process || 8000;
+const port = process.env.process || 8002;
 
 
 
