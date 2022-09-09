@@ -1,5 +1,7 @@
 import express from "express";
 import db from "/Users/viniciussalgueiro/Documents/studing_Node/Alura_Project/src/config/dbConnect.js"
+import livros from "./models/Livro.js"
+import routes from "./router/index.js"
 
 db.on("error", console.log.bind(console, 'erro de conexão'))
 db.once("open", () => {
@@ -10,19 +12,14 @@ const app = express();
 
 app.use(express.json())
 
-const livros = [
-    {id:1, 'titulo':'Senhor dos aneis'},
-    {id:2, 'titulo':'O Hobbit'}
+routes(app)
 
-]
+//const livros = [
+//    {id:1, 'titulo':'Senhor dos aneis'},
+//    {id:2, 'titulo':'O Hobbit'}]
 
-app.get('/', (req,res) => {
-    res.status(200).send('curso de node') 
-})
 
-app.get('/livros', (req,res) => {
-    res.status(200).json(livros)
-})
+
 app.get('/livros/:id', (req,res)=>{
     let index = buscalivro(req.params.id);
     res.json(livros[index]);
